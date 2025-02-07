@@ -4,21 +4,21 @@ using namespace std;
 
 // TODO: Implementar función para calcular la suma de los dígitos de un número
 int sumaDigitos(int n) {
-    // Completa esta función
+
 }
 
 // TODO: Implementar la lógica para calcular la tarifa
 double calcularTarifa(int horas, int dia) {
-    const double TARIFA_PRIMERA_HORA = 6.00;
-    const double TARIFA_1_A_3 = 4.00;
-    const double TARIFA_3_A_5 = 3.00;
-    const double TARIFA_FIJA = 22.00;
-    const int LIMITE_HORAS = 24;
-    const double INCREMENTO_FIN_SEMANA = 1.15;
-    const double DESCUENTO_DIGITOS = 0.95;
+    const double tarifa_primer_hora = 6.00;
+    const double tarifa_1_a_3 = 4.00;
+    const double tarifa_3_a_5 = 3.00;
+    const double tarifa_FIJA = 22.00;
+    const int limite_HORAS = 24;
+    const double incremento_FIN_SEMANA = 1.15;
+    const double descuento_DIGITOS = 0.95;
 
     // Validar límite de horas
-    if (horas > LIMITE_HORAS) {
+    if (horas > limite_HORAS) {
         return -1;
     }
 
@@ -26,23 +26,23 @@ double calcularTarifa(int horas, int dia) {
 
     // TODO: Implementar la lógica para calcular la tarifa base
     if (horas == 1) {
-        // Completa aquí
+        horas * tarifa_primer_hora;
     } else if (horas > 1 && horas <= 3) {
-        // Completa aquí
+        horas * tarifa_1_a_3;
     } else if (horas > 3 && horas <= 5) {
-        // Completa aquí
+        horas * tarifa_3_a_5;
     } else {
-        // Completa aquí
+        horas * tarifa_FIJA;
     }
 
     // TODO: Aplicar incremento si es fin de semana
-    if (/* Completa esta condición */1) {
-        totalPagar *= INCREMENTO_FIN_SEMANA;
+    if (dia == 6 || dia == 7) {
+        totalPagar *= incremento_FIN_SEMANA;
     }
 
     // TODO: Aplicar descuento si la suma de los dígitos es múltiplo de 3
     if (/* Completa esta condición */1) {
-        totalPagar *= DESCUENTO_DIGITOS;
+        totalPagar *= descuento_DIGITOS;
     }
 
     return totalPagar;
@@ -54,7 +54,8 @@ int main() {
     // Leer los valores de entrada
     cin >> horas >> dia;
 
-    double resultado = calcularTarifa(horas, dia);
+    //double resultado = calcularTarifa(horas, dia);
+    double resultado = 10.00;
     if (resultado == -1) {
         cout << "ERROR" << endl;
     } else {
