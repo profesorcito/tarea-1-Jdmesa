@@ -4,10 +4,11 @@ using namespace std;
 
 // TODO: Implementar función para calcular la suma de los dígitos de un número
 int sumaDigitos(int n) {
-    int primer_digit = n/10;
-    int segundo_digit = n%10;
-    int digit_res = primer_digit + segundo_digit;
-}
+    int primer_digit = n / 10;
+    int segundo_digit = n % 10;
+    int result = primer_digit + segundo_digit;
+    return result;
+    }
 
 // TODO: Implementar la lógica para calcular la tarifa
 double calcularTarifa(int horas, int dia) {
@@ -28,11 +29,11 @@ double calcularTarifa(int horas, int dia) {
 
     // TODO: Implementar la lógica para calcular la tarifa base
     if (horas == 1) {
-        totalPagar = tarifa_primer_hora;;
+        totalPagar = tarifa_primer_hora;
     } else if (horas > 1 && horas <= 3) {
-        totalPagar = tarifa_primer_hora * (horas - 1) + tarifa_1_a_3;
+        totalPagar = tarifa_primer_hora + (horas - 1) * tarifa_1_a_3;
     } else if (horas > 3 && horas <= 5) {
-        totalPagar = tarifa_primer_hora + 2 * tarifa_1_a_3 + (horas - 3);
+        totalPagar = tarifa_primer_hora + 2 * tarifa_1_a_3 + (horas - 3) * tarifa_3_a_5;
     } else {
         totalPagar = tarifa_FIJA;
     }
@@ -42,14 +43,15 @@ double calcularTarifa(int horas, int dia) {
         totalPagar *= incremento_FIN_SEMANA;
     }
 
+
+
     // TODO: Aplicar descuento si la suma de los dígitos es múltiplo de 3
-    if ( sumaDigitos(int) %3 == 0) {
+    if (sumaDigitos(horas) % 3 == 0) {
         totalPagar *= descuento_DIGITOS;
     }
 
     return totalPagar;
 }
-
 
 int main() {
     int horas, dia;
