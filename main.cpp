@@ -4,7 +4,9 @@ using namespace std;
 
 // TODO: Implementar función para calcular la suma de los dígitos de un número
 int sumaDigitos(int n) {
-
+    int primer_digit = n/10;
+    int segundo_digit = n%10;
+    int digit_res = primer_digit + segundo_digit;
 }
 
 // TODO: Implementar la lógica para calcular la tarifa
@@ -26,13 +28,13 @@ double calcularTarifa(int horas, int dia) {
 
     // TODO: Implementar la lógica para calcular la tarifa base
     if (horas == 1) {
-        horas * tarifa_primer_hora;
+        totalPagar = tarifa_primer_hora;;
     } else if (horas > 1 && horas <= 3) {
-        horas * tarifa_1_a_3;
+        totalPagar = tarifa_primer_hora * (horas - 1) + tarifa_1_a_3;
     } else if (horas > 3 && horas <= 5) {
-        horas * tarifa_3_a_5;
+        totalPagar = tarifa_primer_hora + 2 * tarifa_1_a_3 + (horas - 3);
     } else {
-        horas * tarifa_FIJA;
+        totalPagar = tarifa_FIJA;
     }
 
     // TODO: Aplicar incremento si es fin de semana
@@ -41,12 +43,13 @@ double calcularTarifa(int horas, int dia) {
     }
 
     // TODO: Aplicar descuento si la suma de los dígitos es múltiplo de 3
-    if (/* Completa esta condición */1) {
+    if ( sumaDigitos(int) %3 == 0) {
         totalPagar *= descuento_DIGITOS;
     }
 
     return totalPagar;
 }
+
 
 int main() {
     int horas, dia;
@@ -54,8 +57,8 @@ int main() {
     // Leer los valores de entrada
     cin >> horas >> dia;
 
-    //double resultado = calcularTarifa(horas, dia);
-    double resultado = 10.00;
+    double resultado = calcularTarifa(horas, dia);
+    //double resultado = 10.00;
     if (resultado == -1) {
         cout << "ERROR" << endl;
     } else {
